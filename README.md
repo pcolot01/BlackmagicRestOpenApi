@@ -19,7 +19,9 @@ https://openapistack.co/docs/openapi-client-axios/bundling/
 npm install -g openapicmd 
 
 npx openapi read ./api/0.1.0/BlackmagicCameraControlRestAPI.yaml --format=json --dereference --bundle > dist/0.1.0/BlackmagicCameraControlRestAPI.json
+
 or
+
 npx openapicmd read ./api/0.1.0/BlackmagicCameraControlRestAPI.yaml --format=json --dereference --bundle > dist/0.1.0/BlackmagicCameraControlRestAPI.json
 
 
