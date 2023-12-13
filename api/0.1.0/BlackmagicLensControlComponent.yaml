@@ -10,7 +10,6 @@ info:
   version: '0.1.0'
 
 components:
-
   ####################
   # Common data models
   ####################
@@ -30,7 +29,7 @@ components:
         apertureNumber:
           type: number
           description: Aperture number
-    Iris:
+    PutIris:
       type: object
       properties:
         apertureStop:
@@ -42,7 +41,7 @@ components:
         apertureNumber:
           type: number
           description: Aperture number
-    Zoom:
+    GetZoom:
       type: object
       properties:
         focalLength:
@@ -51,7 +50,22 @@ components:
         normalised:
           type: number
           description: Normalised value
-    Focus:
+    PutZoom:
+      type: object
+      properties:
+        focalLength:
+          type: integer
+          description: Focal length in mm
+        normalised:
+          type: number
+          description: Normalised value
+    GetFocus:
+      type: object
+      properties:
+        focus:
+          type: number
+          description: Normalised value
+    PutFocus:
       type: object
       properties:
         focus:
@@ -101,7 +115,7 @@ components:
             content:
               application/json:
                 schema:
-                  $ref: '#/components/schemas/Iris'
+                  $ref: '#/components/schemas/PutIris'
         responses:
           200:
             description: OK
@@ -115,7 +129,7 @@ components:
             content:
               application/json:
                 schema:
-                  $ref: '#/components/schemas/Zoom'
+                  $ref: '#/components/schemas/GetZoom'
       put:
         operationId: putLensZoom 
         summary: Set lens’ aperture.
@@ -123,7 +137,7 @@ components:
             content:
               application/json:
                 schema:
-                  $ref: '#/components/schemas/Zoom'
+                  $ref: '#/components/schemas/PutZoom'
         responses:
           200:
             description: OK
@@ -137,7 +151,7 @@ components:
             content:
               application/json:
                 schema:
-                  $ref: '#/components/schemas/Focus'
+                  $ref: '#/components/schemas/GetFocus'
       put:
         operationId: putLensFocus
         summary: Set lens’ focus.
@@ -145,7 +159,7 @@ components:
             content:
               application/json:
                 schema:
-                  $ref: '#/components/schemas/Focus'
+                  $ref: '#/components/schemas/PutFocus'
         responses:
           200:
             description: OK

@@ -18,11 +18,11 @@ https://openapistack.co/docs/openapi-client-axios/bundling/
 
 npm install -g openapicmd 
 
-npx openapi read ./api/0.1.0/BlackmagicCameraControlRestAPI.yaml --format=json --dereference --bundle > dist/0.1.0/BlackmagicCameraControlRestAPI.json
+npx openapi read ./api/0.1.0/BlackmagicCameraControlRestAPI.yaml --format=json --dereference > dist/0.1.0/BlackmagicCameraControlRestAPI.json
 
 or
 
-npx openapicmd read ./api/0.1.0/BlackmagicCameraControlRestAPI.yaml --format=json --dereference --bundle > dist/0.1.0/BlackmagicCameraControlRestAPI.json
+npx openapicmd read ./api/0.1.0/BlackmagicCameraControlRestAPI.yaml --format=json --dereference > dist/0.1.0/BlackmagicCameraControlRestAPI.json
 
 
 Now the following third party tools are able to generate client and server stub, documentation, documentation, ...

@@ -1,38 +1,20 @@
+# OpenAPI version identifier - required for OpenAPI 3.0 domains
 openapi: 3.1.0
+
+#######################
+# Optional info section
+#######################
 info:
   version: 0.1.0
   title: REST API for Blackmagic camera
   description: Blackmagic camera REST API
-paths:
-  /transports/0:
-    $ref: ./BlackmagicTransportControlComponent.yaml#/components/pathitems/transports.0
-  /transports/0/stop:
-    $ref: ./BlackmagicTransportControlComponent.yaml#/components/pathitems/transports.0.stop
-  /transports/0/play:
-    $ref: ./BlackmagicTransportControlComponent.yaml#/components/pathitems/transports.0.play
-  /transports/0/playback:
-    $ref: ./BlackmagicTransportControlComponent.yaml#/components/pathitems/transports.0.playback
-  /transports/0/record:
-    $ref: ./BlackmagicTransportControlComponent.yaml#/components/pathitems/transports.0.record
-  /transports/0/timecode:
-    $ref: ./BlackmagicTransportControlComponent.yaml#/components/pathitems/transports.0.timecode
-  /transports/0/timecode/source:
-    $ref: ./BlackmagicTransportControlComponent.yaml#/components/pathitems/transports.0.timecode.source
-    
-  /lens/iris:
-    $ref: ./BlackmagicLensControlComponent.yaml#/components/pathitems/lens.iris
-  /lens/zoom:
-    $ref: ./BlackmagicLensControlComponent.yaml#/components/pathitems/lens.zoom
-  /lens/focus:
-    $ref: ./BlackmagicLensControlComponent.yaml#/components/pathitems/lens.focus
-  /lens/focus/doAutoFocus:
-    $ref: ./BlackmagicLensControlComponent.yaml#/components/pathitems/lens.focus.doAutoFocus
+
+#####################################
+# Servers index  0 is the default one
+#####################################
 servers:
-  # Added by API Auto Mocking Plugin
-  - description: SwaggerHub API Auto Mocking
-    url: https://virtserver.swaggerhub.com/PIERRECOLOT_1/Blackmagic_Camera_API/0.1.0
   - description: Local Mocking
-    url: https://localhost/PIERRECOLOT_1/Blackmagic_Camera_API/0.1.0
+    url: http://localhost:9000
   - description: Camera1 to be declare in DNS or Hosts file
     url: https://camera1/PIERRECOLOT_1/Blackmagic_Camera_API/0.1.0
   - description: Camera2 to be declare in DNS or Hosts file
@@ -45,3 +27,77 @@ servers:
     url: https://camera5/PIERRECOLOT_1/Blackmagic_Camera_API/0.1.0
   - description: Camera6 to be declare in DNS or Hosts file
     url: https://camera6/PIERRECOLOT_1/Blackmagic_Camera_API/0.1.0
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/PIERRECOLOT_1/Blackmagic_Camera_API/0.1.0
+
+###################
+# Public components
+###################
+components:
+  schemas:
+    ###########
+    # Transport
+    ###########
+    GetTransportMode:
+      $ref: './BlackmagicTransportControlComponent.yaml#/components/schemas/GetTransportMode'
+    PutTransportMode:
+      $ref: './BlackmagicTransportControlComponent.yaml#/components/schemas/PutTransportMode'
+    GetStop:
+      $ref: './BlackmagicTransportControlComponent.yaml#/components/schemas/GetStop'
+    GetPlay:
+      $ref: './BlackmagicTransportControlComponent.yaml#/components/schemas/GetPlay'
+    GetPlayback:
+      $ref: './BlackmagicTransportControlComponent.yaml#/components/schemas/GetPlayback'
+    PutPlayback:
+      $ref: './BlackmagicTransportControlComponent.yaml#/components/schemas/PutPlayback'
+    GetRecord:
+      $ref: './BlackmagicTransportControlComponent.yaml#/components/schemas/GetRecord'
+    PutRecord:
+      $ref: './BlackmagicTransportControlComponent.yaml#/components/schemas/PutRecord'
+    GetTimecode:
+      $ref: './BlackmagicTransportControlComponent.yaml#/components/schemas/GetTimecode'
+    GetTimecodeSource:
+      $ref: './BlackmagicTransportControlComponent.yaml#/components/schemas/GetTimecodeSource'
+
+    ######
+    # Lens
+    ######
+    GetIris:
+      $ref: './BlackmagicLensControlComponent.yaml#/components/schemas/GetIris'
+    PutIris:
+      $ref: './BlackmagicLensControlComponent.yaml#/components/schemas/PutIris'
+    GetZoom:
+      $ref: './BlackmagicLensControlComponent.yaml#/components/schemas/GetZoom'
+    PutZoom:
+      $ref: './BlackmagicLensControlComponent.yaml#/components/schemas/PutZoom'
+    GetFocus:
+      $ref: './BlackmagicLensControlComponent.yaml#/components/schemas/GetFocus'
+    PutFocus:
+      $ref: './BlackmagicLensControlComponent.yaml#/components/schemas/PutFocus'
+
+paths:
+  /transports/0:
+    $ref: './BlackmagicTransportControlComponent.yaml#/components/pathitems/transports.0'
+  /transports/0/stop:
+    $ref: './BlackmagicTransportControlComponent.yaml#/components/pathitems/transports.0.stop'
+  /transports/0/play:
+    $ref: './BlackmagicTransportControlComponent.yaml#/components/pathitems/transports.0.play'
+  /transports/0/playback:
+    $ref: './BlackmagicTransportControlComponent.yaml#/components/pathitems/transports.0.playback'
+  /transports/0/record:
+    $ref: './BlackmagicTransportControlComponent.yaml#/components/pathitems/transports.0.record'
+  /transports/0/timecode:
+    $ref: './BlackmagicTransportControlComponent.yaml#/components/pathitems/transports.0.timecode'
+  /transports/0/timecode/source:
+    $ref: './BlackmagicTransportControlComponent.yaml#/components/pathitems/transports.0.timecode.source'
+    
+  /lens/iris:
+    $ref: './BlackmagicLensControlComponent.yaml#/components/pathitems/lens.iris'
+  /lens/zoom:
+    $ref: './BlackmagicLensControlComponent.yaml#/components/pathitems/lens.zoom'
+  /lens/focus:
+    $ref: './BlackmagicLensControlComponent.yaml#/components/pathitems/lens.focus'
+  /lens/focus/doAutoFocus:
+    $ref: './BlackmagicLensControlComponent.yaml#/components/pathitems/lens.focus.doAutoFocus'
+
