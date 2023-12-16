@@ -1,0 +1,65 @@
+# OpenAPI version identifier - required for OpenAPI 3.0 domains
+openapi: 3.1.0
+
+#######################
+# Optional info section
+#######################
+info:
+  version: 1.0.0
+  title: REST API for Blackmagic camera 
+  description: Blackmagic camera REST API supporting TransportControl
+
+#####################################
+# Servers index  0 is the default one
+#####################################
+servers:
+  - url: http://camera/control/api/v1
+  
+  - description: Local Mocking
+    url: http://localhost:9000/control/api/v1
+    
+  - description: Camera1 to be declare in DNS or Hosts file
+    url: https://camera1/control/api/v1
+  - description: Camera2 to be declare in DNS or Hosts file
+    url: https://camera2/control/api/v1
+  - description: Camera3 to be declare in DNS or Hosts file
+    url: https://camera3/control/api/v1
+  - description: Camera4 to be declare in DNS or Hosts file
+    url: https://camera4/control/api/v1
+  - description: Camera5 to be declare in DNS or Hosts file
+    url: https://camera5/control/api/v1
+  - description: Camera6 to be declare in DNS or Hosts file
+    url: https://camera6/control/api/v1
+
+###################
+# Public components
+###################
+components:
+  schemas:
+    shutterSpeed:
+      $ref: './Components/VideoControlComponent.yaml#/components/schemas/shutterSpeed'
+    shutterAngle:
+      $ref: './Components/VideoControlComponent.yaml#/components/schemas/shutterAngle'
+    autoExposureMode:
+      $ref: './Components/VideoControlComponent.yaml#/components/schemas/autoExposureMode'
+    ndFilterDisplayMode:
+      $ref: './Components/VideoControlComponent.yaml#/components/schemas/ndFilterDisplayMode'
+
+paths:
+  /video/iso:
+    $ref: './Components/VideoControlComponent.yaml#/components/pathitems/video.iso'
+  /video/gain:
+    $ref: './Components/VideoControlComponent.yaml#/components/pathitems/video.gain'
+  /video/whiteBalance:
+    $ref: './Components/VideoControlComponent.yaml#/components/pathitems/video.whiteBalance'
+  /video/whiteBalance/doAuto:
+    $ref: './Components/VideoControlComponent.yaml#/components/pathitems/video.whiteBalance.doAuto'
+  /video/ndFilter:
+    $ref: './Components/VideoControlComponent.yaml#/components/pathitems/video.ndFilter'
+  /video/ndFilter/displayMode:
+    $ref: './Components/VideoControlComponent.yaml#/components/pathitems/video.ndFilter.displayMode'
+  /video/shutter:
+    $ref: './Components/VideoControlComponent.yaml#/components/pathitems/video.shutter'
+  /video/autoExposure:
+    $ref: './Components/VideoControlComponent.yaml#/components/pathitems/video.autoExposure'
+  

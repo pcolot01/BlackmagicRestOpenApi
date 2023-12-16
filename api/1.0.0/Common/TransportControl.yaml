@@ -1,0 +1,68 @@
+# OpenAPI version identifier - required for OpenAPI 3.0 domains
+openapi: 3.1.0
+
+#######################
+# Optional info section
+#######################
+info:
+  version: 1.0.0
+  title: REST API for Blackmagic camera 
+  description: Blackmagic camera REST API supporting TransportControl
+
+#####################################
+# Servers index  0 is the default one
+#####################################
+servers:
+  - url: http://camera/control/api/v1
+  
+  - description: Local Mocking
+    url: http://localhost:9000/control/api/v1
+    
+  - description: Camera1 to be declare in DNS or Hosts file
+    url: https://camera1/control/api/v1
+  - description: Camera2 to be declare in DNS or Hosts file
+    url: https://camera2/control/api/v1
+  - description: Camera3 to be declare in DNS or Hosts file
+    url: https://camera3/control/api/v1
+  - description: Camera4 to be declare in DNS or Hosts file
+    url: https://camera4/control/api/v1
+  - description: Camera5 to be declare in DNS or Hosts file
+    url: https://camera5/control/api/v1
+  - description: Camera6 to be declare in DNS or Hosts file
+    url: https://camera6/control/api/v1
+
+###################
+# Public components
+###################
+components:
+  schemas:
+    TransportResponse:
+      $ref: './Components/TransportControlComponent.yaml#/components/schemas/TransportResponse'
+    Stopped:
+      $ref: './Components/TransportControlComponent.yaml#/components/schemas/Stopped'
+    Playback:
+      $ref: './Components/TransportControlComponent.yaml#/components/schemas/Playback'
+    GetRecord:
+      $ref: './Components/TransportControlComponent.yaml#/components/schemas/GetRecord'
+    Record:
+      $ref: './Components/TransportControlComponent.yaml#/components/schemas/Record'
+    Timecode:
+      $ref: './Components/TransportControlComponent.yaml#/components/schemas/Timecode'
+    TimecodeSource:
+      $ref: './Components/TransportControlComponent.yaml#/components/schemas/TimecodeSource'
+
+paths:
+  /transports/0:
+    $ref: './Components/TransportControlComponent.yaml#/components/pathitems/transports.0'
+  /transports/0/stop:
+    $ref: './Components/TransportControlComponent.yaml#/components/pathitems/transports.0.stop'
+  /transports/0/play:
+    $ref: './Components/TransportControlComponent.yaml#/components/pathitems/transports.0.play'
+  /transports/0/playback:
+    $ref: './Components/TransportControlComponent.yaml#/components/pathitems/transports.0.playback'
+  /transports/0/record:
+    $ref: './Components/TransportControlComponent.yaml#/components/pathitems/transports.0.record'
+  /transports/0/timecode:
+    $ref: './Components/TransportControlComponent.yaml#/components/pathitems/transports.0.timecode'
+  /transports/0/timecode/source:
+    $ref: './Components/TransportControlComponent.yaml#/components/pathitems/transports.0.timecode.source'

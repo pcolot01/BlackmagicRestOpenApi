@@ -1,0 +1,53 @@
+# OpenAPI version identifier - required for OpenAPI 3.0 domains
+openapi: 3.1.0
+
+#######################
+# Optional info section
+#######################
+info:
+  version: 1.0.0
+  title: REST API for Blackmagic camera 
+  description: Blackmagic camera REST API supporting TransportControl
+
+#####################################
+# Servers index  0 is the default one
+#####################################
+servers:
+  - url: http://camera/control/api/v1
+  
+  - description: Local Mocking
+    url: http://localhost:9000/control/api/v1
+    
+  - description: Camera1 to be declare in DNS or Hosts file
+    url: https://camera1/control/api/v1
+  - description: Camera2 to be declare in DNS or Hosts file
+    url: https://camera2/control/api/v1
+  - description: Camera3 to be declare in DNS or Hosts file
+    url: https://camera3/control/api/v1
+  - description: Camera4 to be declare in DNS or Hosts file
+    url: https://camera4/control/api/v1
+  - description: Camera5 to be declare in DNS or Hosts file
+    url: https://camera5/control/api/v1
+  - description: Camera6 to be declare in DNS or Hosts file
+    url: https://camera6/control/api/v1
+
+###################
+# Public components
+###################
+components:
+  schemas:
+    presetList:
+      $ref: './Components/PresetControlComponent.yaml#/components/schemas/presetList'
+    postPresetResponse:
+      $ref: './Components/PresetControlComponent.yaml#/components/schemas/postPresetResponse'
+    activePreset:
+      $ref: './Components/PresetControlComponent.yaml#/components/schemas/activePreset'
+
+paths:
+  /presets:
+    $ref: './Components/PresetControlComponent.yaml#/components/pathitems/presets'
+  /presets/active:
+    $ref: './Components/PresetControlComponent.yaml#/components/pathitems/presets.active'
+  /presets/{presetName}:
+    $ref: './Components/PresetControlComponent.yaml#/components/pathitems/presets.{presetName}'
+    

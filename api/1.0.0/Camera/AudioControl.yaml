@@ -1,0 +1,76 @@
+# OpenAPI version identifier - required for OpenAPI 3.0 domains
+openapi: 3.1.0
+
+#######################
+# Optional info section
+#######################
+info:
+  version: 1.0.0
+  title: REST API for Blackmagic camera 
+  description: Blackmagic camera REST API supporting TransportControl
+
+#####################################
+# Servers index  0 is the default one
+#####################################
+servers:
+  - url: http://camera/control/api/v1
+  
+  - description: Local Mocking
+    url: http://localhost:9000/control/api/v1
+    
+  - description: Camera1 to be declare in DNS or Hosts file
+    url: https://camera1/control/api/v1
+  - description: Camera2 to be declare in DNS or Hosts file
+    url: https://camera2/control/api/v1
+  - description: Camera3 to be declare in DNS or Hosts file
+    url: https://camera3/control/api/v1
+  - description: Camera4 to be declare in DNS or Hosts file
+    url: https://camera4/control/api/v1
+  - description: Camera5 to be declare in DNS or Hosts file
+    url: https://camera5/control/api/v1
+  - description: Camera6 to be declare in DNS or Hosts file
+    url: https://camera6/control/api/v1
+
+###################
+# Public components
+###################
+components:
+  schemas:
+    input:
+      $ref: './Components/AudioControlComponent.yaml#/components/schemas/input'
+    description:
+      $ref: './Components/AudioControlComponent.yaml#/components/schemas/description'
+    supportedInputs:
+      $ref: './Components/AudioControlComponent.yaml#/components/schemas/supportedInputs'
+    level:
+      $ref: './Components/AudioControlComponent.yaml#/components/schemas/level'
+    phantomPower:
+      $ref: './Components/AudioControlComponent.yaml#/components/schemas/phantomPower'
+    padding:
+      $ref: './Components/AudioControlComponent.yaml#/components/schemas/padding'
+    lowCutFilter:
+      $ref: './Components/AudioControlComponent.yaml#/components/schemas/lowCutFilter'
+    available:
+      $ref: './Components/AudioControlComponent.yaml#/components/schemas/available'
+
+paths:
+  /audio/channel/{channelIndex}/input:
+    $ref: './Components/AudioControlComponent.yaml#/components/pathitems/audio.channel.{channelIndex}.input'
+  /audio/channel/{channelIndex}/input/description:
+    $ref: './Components/AudioControlComponent.yaml#/components/pathitems/audio.channel.{channelIndex}.input.description'
+  /audio/channel/{channelIndex}/supportedInputs:
+    $ref: './Components/AudioControlComponent.yaml#/components/pathitems/audio.channel.{channelIndex}.supportedInputs'
+  /audio/channel/{channelIndex}/level:
+    $ref: './Components/AudioControlComponent.yaml#/components/pathitems/audio.channel.{channelIndex}.level'
+  /audio/channel/{channelIndex}/phantomPower:
+    $ref: './Components/AudioControlComponent.yaml#/components/pathitems/audio.channel.{channelIndex}.phantomPower'
+  /audio/channel/{channelIndex}/padding:
+    $ref: './Components/AudioControlComponent.yaml#/components/pathitems/audio.channel.{channelIndex}.padding'
+  /audio/channel/{channelIndex}/lowCutFilter:
+    $ref: './Components/AudioControlComponent.yaml#/components/pathitems/audio.channel.{channelIndex}.lowCutFilter'
+  /audio/channel/{channelIndex}/available:
+    $ref: './Components/AudioControlComponent.yaml#/components/pathitems/audio.channel.{channelIndex}.available'
+  
+
+
+    

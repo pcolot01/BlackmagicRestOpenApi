@@ -1,0 +1,60 @@
+# OpenAPI version identifier - required for OpenAPI 3.0 domains
+openapi: 3.1.0
+
+#######################
+# Optional info section
+#######################
+info:
+  version: 1.0.0
+  title: REST API for Blackmagic camera 
+  description: Blackmagic camera REST API supporting TransportControl
+
+#####################################
+# Servers index  0 is the default one
+#####################################
+servers:
+  - url: http://camera/control/api/v1
+  
+  - description: Local Mocking
+    url: http://localhost:9000/control/api/v1
+    
+  - description: Camera1 to be declare in DNS or Hosts file
+    url: https://camera1/control/api/v1
+  - description: Camera2 to be declare in DNS or Hosts file
+    url: https://camera2/control/api/v1
+  - description: Camera3 to be declare in DNS or Hosts file
+    url: https://camera3/control/api/v1
+  - description: Camera4 to be declare in DNS or Hosts file
+    url: https://camera4/control/api/v1
+  - description: Camera5 to be declare in DNS or Hosts file
+    url: https://camera5/control/api/v1
+  - description: Camera6 to be declare in DNS or Hosts file
+    url: https://camera6/control/api/v1
+
+###################
+# Public components
+###################
+components:
+  schemas:
+    Workingset:
+      $ref: './Components/MediaControlComponent.yaml#/components/schemas/Workingset'
+    ActiveMedia:
+      $ref: './Components/MediaControlComponent.yaml#/components/schemas/ActiveMedia'
+    DoFormatSupportedFilesystems:
+      $ref: './Components/MediaControlComponent.yaml#/components/schemas/DoFormatSupportedFilesystems'
+    MediaDeviceInformation:
+      $ref: './Components/MediaControlComponent.yaml#/components/schemas/MediaDeviceInformation'
+    FormatKey:
+      $ref: './Components/MediaControlComponent.yaml#/components/schemas/FormatKey'
+
+paths:
+  /media/workingset:
+    $ref: './Components/MediaControlComponent.yaml#/components/pathitems/media.workingset'
+  /media/active:
+    $ref: './Components/MediaControlComponent.yaml#/components/pathitems/media.active'
+  /media/devices/doformatSupportedFilesystems:
+    $ref: './Components/MediaControlComponent.yaml#/components/pathitems/media.devices.doformatSupportedFilesystems'
+  /media/devices/{deviceName}:
+    $ref: './Components/MediaControlComponent.yaml#/components/pathitems/media.devices.{deviceName}'
+  /media/devices/{deviceName}/doformat:
+    $ref: './Components/MediaControlComponent.yaml#/components/pathitems/media.devices.{deviceName}.doformat'

@@ -1,0 +1,335 @@
+# OpenAPI version identifier - required for OpenAPI 3.0 domains
+openapi: 3.1.0
+
+#######################
+# Optional info section
+#######################
+info:
+  version: 1.0.0
+  title: REST API for Blackmagic camera 
+  description: Blackmagic camera REST API supporting TransportControl, LensControl
+
+#####################################
+# Servers index  0 is the default one
+#####################################
+servers:
+  - url: http://camera/control/api/v1
+  
+  - description: Local Mocking
+    url: http://localhost:9000/control/api/v1
+    
+  - description: Camera1 to be declare in DNS or Hosts file
+    url: https://camera1/control/api/v1
+  - description: Camera2 to be declare in DNS or Hosts file
+    url: https://camera2/control/api/v1
+  - description: Camera3 to be declare in DNS or Hosts file
+    url: https://camera3/control/api/v1
+  - description: Camera4 to be declare in DNS or Hosts file
+    url: https://camera4/control/api/v1
+  - description: Camera5 to be declare in DNS or Hosts file
+    url: https://camera5/control/api/v1
+  - description: Camera6 to be declare in DNS or Hosts file
+    url: https://camera6/control/api/v1
+
+
+###################
+# Public components
+###################
+components:
+  schemas:
+    ########
+    # Common
+    ########
+
+    #######
+    # Event
+    #######
+    eventsList:
+      $ref: './Common/Components/EventControlComponent.yaml#/components/schemas/eventsList'
+
+    #######
+    # Media
+    #######
+    Workingset:
+      $ref: './Common/Components/MediaControlComponent.yaml#/components/schemas/Workingset'
+    ActiveMedia:
+      $ref: './Common/Components/MediaControlComponent.yaml#/components/schemas/ActiveMedia'
+    DoFormatSupportedFilesystems:
+      $ref: './Common/Components/MediaControlComponent.yaml#/components/schemas/DoFormatSupportedFilesystems'
+    MediaDeviceInformation:
+      $ref: './Common/Components/MediaControlComponent.yaml#/components/schemas/MediaDeviceInformation'
+    FormatKey:
+      $ref: './Common/Components/MediaControlComponent.yaml#/components/schemas/FormatKey'
+
+    ########
+    # System
+    ########
+    SystemResponse:
+      $ref: './Common/Components/SystemControlComponent.yaml#/components/schemas/SystemResponse'
+    SupportedCodecFormats:
+      $ref: './Common/Components/SystemControlComponent.yaml#/components/schemas/SupportedCodecFormats'
+    CodecFormat:
+      $ref: './Common/Components/SystemControlComponent.yaml#/components/schemas/CodecFormat'
+    SupportedVideoFormats:
+      $ref: './Common/Components/SystemControlComponent.yaml#/components/schemas/SupportedVideoFormats'
+    FrameRate:
+      $ref: './Common/Components/SystemControlComponent.yaml#/components/schemas/FrameRate'
+    VideoFormat:
+      $ref: './Common/Components/SystemControlComponent.yaml#/components/schemas/VideoFormat'
+    GetVideoFormat:
+      $ref: './Common/Components/SystemControlComponent.yaml#/components/schemas/GetVideoFormat'
+    Format:
+      $ref: './Common/Components/SystemControlComponent.yaml#/components/schemas/Format'
+    Resolution:
+      $ref: './Common/Components/SystemControlComponent.yaml#/components/schemas/Resolution'
+    SupportedFormats:
+      $ref: './Common/Components/SystemControlComponent.yaml#/components/schemas/SupportedFormats'
+    SupportedFormat:
+      $ref: './Common/Components/SystemControlComponent.yaml#/components/schemas/SupportedFormat'
+
+    ##########
+    # Timeline
+    ##########
+    Timeline:
+      $ref: './Common/Components/TimelineControlComponent.yaml#/components/schemas/Timeline'
+    AddClip:
+      $ref: './Common/Components/TimelineControlComponent.yaml#/components/schemas/AddClip'
+
+    ###########
+    # Transport
+    ###########
+    TransportResponse:
+      $ref: './Common/Components/TransportControlComponent.yaml#/components/schemas/TransportResponse'
+    Stopped:
+      $ref: './Common/Components/TransportControlComponent.yaml#/components/schemas/Stopped'
+    Playback:
+      $ref: './Common/Components/TransportControlComponent.yaml#/components/schemas/Playback'
+    GetRecord:
+      $ref: './Common/Components/TransportControlComponent.yaml#/components/schemas/GetRecord'
+    Record:
+      $ref: './Common/Components/TransportControlComponent.yaml#/components/schemas/Record'
+    Timecode:
+      $ref: './Common/Components/TransportControlComponent.yaml#/components/schemas/Timecode'
+    TimecodeSource:
+      $ref: './Common/Components/TransportControlComponent.yaml#/components/schemas/TimecodeSource'
+
+    ########
+    # Camera
+    ########
+
+    #######
+    # Audio
+    #######
+    input:
+      $ref: './Camera/Components/AudioControlComponent.yaml#/components/schemas/input'
+    description:
+      $ref: './Camera/Components/AudioControlComponent.yaml#/components/schemas/description'
+    supportedInputs:
+      $ref: './Camera/Components/AudioControlComponent.yaml#/components/schemas/supportedInputs'
+    level:
+      $ref: './Camera/Components/AudioControlComponent.yaml#/components/schemas/level'
+    phantomPower:
+      $ref: './Camera/Components/AudioControlComponent.yaml#/components/schemas/phantomPower'
+    padding:
+      $ref: './Camera/Components/AudioControlComponent.yaml#/components/schemas/padding'
+    lowCutFilter:
+      $ref: './Camera/Components/AudioControlComponent.yaml#/components/schemas/lowCutFilter'
+    available:
+      $ref: './Camera/Components/AudioControlComponent.yaml#/components/schemas/available'
+    
+    #################
+    # ColorCorrection
+    #################
+    Lift:
+      $ref: './Camera/Components/ColorCorrectionControlComponent.yaml#/components/schemas/Lift'
+    Gamma:
+      $ref: './Camera/Components/ColorCorrectionControlComponent.yaml#/components/schemas/Gamma'
+    Gain:
+      $ref: './Camera/Components/ColorCorrectionControlComponent.yaml#/components/schemas/Gain'
+    Offset:
+      $ref: './Camera/Components/ColorCorrectionControlComponent.yaml#/components/schemas/Offset'
+    Contrast:
+      $ref: './Camera/Components/ColorCorrectionControlComponent.yaml#/components/schemas/Contrast'
+    Color:
+      $ref: './Camera/Components/ColorCorrectionControlComponent.yaml#/components/schemas/Color'
+    LumaContribution:
+      $ref: './Camera/Components/ColorCorrectionControlComponent.yaml#/components/schemas/LumaContribution'
+    
+    ######
+    # Lens
+    ######
+    apertureStop:
+      $ref: './Camera/Components/LensControlComponent.yaml#/components/schemas/apertureStop'
+    normalised:
+      $ref: './Camera/Components/LensControlComponent.yaml#/components/schemas/normalised'
+    apertureNumber:
+      $ref: './Camera/Components/LensControlComponent.yaml#/components/schemas/apertureNumber'
+    focalLength:
+      $ref: './Camera/Components/LensControlComponent.yaml#/components/schemas/focalLength'
+
+  ########
+  # Preset
+  ########
+    presetList:
+      $ref: './Camera/Components/PresetControlComponent.yaml#/components/schemas/presetList'
+    postPresetResponse:
+      $ref: './Camera/Components/PresetControlComponent.yaml#/components/schemas/postPresetResponse'
+    activePreset:
+      $ref: './Camera/Components/PresetControlComponent.yaml#/components/schemas/activePreset'
+
+  #######
+  # Video
+  #######
+    shutterSpeed:
+      $ref: './Camera/Components/VideoControlComponent.yaml#/components/schemas/shutterSpeed'
+    shutterAngle:
+      $ref: './Camera/Components/VideoControlComponent.yaml#/components/schemas/shutterAngle'
+    autoExposureMode:
+      $ref: './Camera/Components/VideoControlComponent.yaml#/components/schemas/autoExposureMode'
+    ndFilterDisplayMode:
+      $ref: './Camera/Components/VideoControlComponent.yaml#/components/schemas/ndFilterDisplayMode'
+
+paths:
+  ########
+  # Common
+  ########
+
+  #######
+  # Event
+  #######
+  /event/list:
+    $ref: './Common/Components/EventControlComponent.yaml#/components/pathitems/event.list'
+
+  #######
+  # Media
+  #######
+  /media/workingset:
+    $ref: './Common/Components/MediaControlComponent.yaml#/components/pathitems/media.workingset'
+  /media/active:
+    $ref: './Common/Components/MediaControlComponent.yaml#/components/pathitems/media.active'
+  /media/devices/doformatSupportedFilesystems:
+    $ref: './Common/Components/MediaControlComponent.yaml#/components/pathitems/media.devices.doformatSupportedFilesystems'
+  /media/devices/{deviceName}:
+    $ref: './Common/Components/MediaControlComponent.yaml#/components/pathitems/media.devices.{deviceName}'
+  /media/devices/{deviceName}/doformat:
+    $ref: './Common/Components/MediaControlComponent.yaml#/components/pathitems/media.devices.{deviceName}.doformat'
+
+  ########
+  # System
+  ########
+  /system:
+    $ref: './Common/Components/SystemControlComponent.yaml#/components/pathitems/system'
+  /system/supportedCodecFormats:
+    $ref: './Common/Components/SystemControlComponent.yaml#/components/pathitems/system.supportedCodecFormats'
+  /system/codecFormat:
+    $ref: './Common/Components/SystemControlComponent.yaml#/components/pathitems/system.codecFormat'
+  /system/videoFormat:
+    $ref: './Common/Components/SystemControlComponent.yaml#/components/pathitems/system.videoFormat'
+  /system/supportedVideoFormats:
+    $ref: './Common/Components/SystemControlComponent.yaml#/components/pathitems/system.supportedVideoFormats'
+  /system/supportedFormats:
+    $ref: './Common/Components/SystemControlComponent.yaml#/components/pathitems/system.supportedFormats'
+  /system/format:
+    $ref: './Common/Components/SystemControlComponent.yaml#/components/pathitems/system.format'
+
+  ##########
+  # Timeline
+  ##########
+  /timelines/0:
+    $ref: './Common/Components/TimelineControlComponent.yaml#/components/pathitems/timelines.0'
+  /timelines/0/add:
+    $ref: './Common/Components/TimelineControlComponent.yaml#/components/pathitems/timelines.0.add'
+
+  ###########
+  # Transport
+  ###########
+  /transports/0:
+    $ref: './Common/Components/TransportControlComponent.yaml#/components/pathitems/transports.0'
+  /transports/0/stop:
+    $ref: './Common/Components/TransportControlComponent.yaml#/components/pathitems/transports.0.stop'
+  /transports/0/play:
+    $ref: './Common/Components/TransportControlComponent.yaml#/components/pathitems/transports.0.play'
+  /transports/0/playback:
+    $ref: './Common/Components/TransportControlComponent.yaml#/components/pathitems/transports.0.playback'
+  /transports/0/record:
+    $ref: './Common/Components/TransportControlComponent.yaml#/components/pathitems/transports.0.record'
+  /transports/0/timecode:
+    $ref: './Common/Components/TransportControlComponent.yaml#/components/pathitems/transports.0.timecode'
+  /transports/0/timecode/source:
+    $ref: './Common/Components/TransportControlComponent.yaml#/components/pathitems/transports.0.timecode.source'
+
+  ########
+  # Camera
+  ########
+
+  #######
+  # Audio
+  #######
+  /audio/channel/{channelIndex}/input:
+    $ref: './Camera/Components/AudioControlComponent.yaml#/components/pathitems/audio.channel.{channelIndex}.input'
+  /audio/channel/{channelIndex}/input/description:
+    $ref: './Camera/Components/AudioControlComponent.yaml#/components/pathitems/audio.channel.{channelIndex}.input.description'
+  /audio/channel/{channelIndex}/supportedInputs:
+    $ref: './Camera/Components/AudioControlComponent.yaml#/components/pathitems/audio.channel.{channelIndex}.supportedInputs'
+  /audio/channel/{channelIndex}/level:
+    $ref: './Camera/Components/AudioControlComponent.yaml#/components/pathitems/audio.channel.{channelIndex}.level'
+  /audio/channel/{channelIndex}/phantomPower:
+    $ref: './Camera/Components/AudioControlComponent.yaml#/components/pathitems/audio.channel.{channelIndex}.phantomPower'
+  /audio/channel/{channelIndex}/padding:
+    $ref: './Camera/Components/AudioControlComponent.yaml#/components/pathitems/audio.channel.{channelIndex}.padding'
+  /audio/channel/{channelIndex}/lowCutFilter:
+    $ref: './Camera/Components/AudioControlComponent.yaml#/components/pathitems/audio.channel.{channelIndex}.lowCutFilter'
+  /audio/channel/{channelIndex}/available:
+    $ref: './Camera/Components/AudioControlComponent.yaml#/components/pathitems/audio.channel.{channelIndex}.available'
+  
+  #################
+  # ColorCorrection
+  #################
+  /colorCorrection/lift:
+    $ref: './Camera/Components/ColorCorrectionControlComponent.yaml#/components/pathitems/colorCorrection.lift'
+  /colorCorrection/gamma:
+    $ref: './Camera/Components/ColorCorrectionControlComponent.yaml#/components/pathitems/colorCorrection.gamma'
+  /colorCorrection/gain:
+    $ref: './Camera/Components/ColorCorrectionControlComponent.yaml#/components/pathitems/colorCorrection.gain'
+  /colorCorrection/offset:
+    $ref: './Camera/Components/ColorCorrectionControlComponent.yaml#/components/pathitems/colorCorrection.offset'
+  /colorCorrection/contrast:
+    $ref: './Camera/Components/ColorCorrectionControlComponent.yaml#/components/pathitems/colorCorrection.contrast'
+  /colorCorrection/color:
+    $ref: './Camera/Components/ColorCorrectionControlComponent.yaml#/components/pathitems/colorCorrection.color'
+  /colorCorrection/lumaContribution:
+    $ref: './Camera/Components/ColorCorrectionControlComponent.yaml#/components/pathitems/colorCorrection.lumaContribution'
+  
+  ######
+  # Lens
+  ######
+  /lens/iris:
+    $ref: './Camera/Components/LensControlComponent.yaml#/components/pathitems/iris'
+  /lens/zoom:
+    $ref: './Camera/Components/LensControlComponent.yaml#/components/pathitems/zoom'
+  /lens/focus:
+    $ref: './Camera/Components/LensControlComponent.yaml#/components/pathitems/focus'
+  /lens/focus/doAutoFocus:
+    $ref: './Camera/Components/LensControlComponent.yaml#/components/pathitems/doAutoFocus'
+
+  ########
+  # Preset
+  ########
+  /presets:
+    $ref: './Camera/Components/PresetControlComponent.yaml#/components/pathitems/presets'
+  /presets/active:
+    $ref: './Camera/Components/PresetControlComponent.yaml#/components/pathitems/presets.active'
+  /presets/{presetName}:
+    $ref: './Camera/Components/PresetControlComponent.yaml#/components/pathitems/presets.{presetName}'
+
+  #######
+  # Video
+  #######
+    shutterSpeed:
+      $ref: './Camera/Components/VideoControlComponent.yaml#/components/schemas/shutterSpeed'
+    shutterAngle:
+      $ref: './Camera/Components/VideoControlComponent.yaml#/components/schemas/shutterAngle'
+    autoExposureMode:
+      $ref: './Camera/Components/VideoControlComponent.yaml#/components/schemas/autoExposureMode'
+    ndFilterDisplayMode:
+      $ref: './Camera/Components/VideoControlComponent.yaml#/components/schemas/ndFilterDisplayMode'
