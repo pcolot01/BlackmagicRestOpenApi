@@ -304,13 +304,13 @@ paths:
   # Lens
   ######
   /lens/iris:
-    $ref: './Camera/Components/LensControlComponent.yaml#/components/pathitems/iris'
+    $ref: './Camera/Components/LensControlComponent.yaml#/components/pathitems/lens.iris'
   /lens/zoom:
-    $ref: './Camera/Components/LensControlComponent.yaml#/components/pathitems/zoom'
+    $ref: './Camera/Components/LensControlComponent.yaml#/components/pathitems/lens.oom'
   /lens/focus:
-    $ref: './Camera/Components/LensControlComponent.yaml#/components/pathitems/focus'
+    $ref: './Camera/Components/LensControlComponent.yaml#/components/pathitems/lens.focus'
   /lens/focus/doAutoFocus:
-    $ref: './Camera/Components/LensControlComponent.yaml#/components/pathitems/doAutoFocus'
+    $ref: './Camera/Components/LensControlComponent.yaml#/components/pathitems/lens.focus.doAutoFocus'
 
   ########
   # Preset
