@@ -47,10 +47,10 @@ components:
 
 paths:
   /lens/iris:
-    $ref: './Components/LensControlComponent.yaml#/components/pathitems/iris'
+    $ref: './Camera/Components/LensControlComponent.yaml#/components/pathitems/lens.iris'
   /lens/zoom:
-    $ref: './Components/LensControlComponent.yaml#/components/pathitems/zoom'
+    $ref: './Camera/Components/LensControlComponent.yaml#/components/pathitems/lens.zoom'
   /lens/focus:
-    $ref: './Components/LensControlComponent.yaml#/components/pathitems/focus'
+    $ref: './Camera/Components/LensControlComponent.yaml#/components/pathitems/lens.focus'
   /lens/focus/doAutoFocus:
-    $ref: './Components/LensControlComponent.yaml#/components/pathitems/doAutoFocus'
+    $ref: './Camera/Components/LensControlComponent.yaml#/components/pathitems/lens.focus.doAutoFocus'
