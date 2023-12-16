@@ -326,10 +326,10 @@ paths:
   # Video
   #######
     shutterSpeed:
-      $ref: './Camera/Components/VideoControlComponent.yaml#/components/schemas/shutterSpeed'
+      $ref: './Camera/Components/VideoControlComponent.yaml#/components/pathitems/shutterSpeed'
     shutterAngle:
-      $ref: './Camera/Components/VideoControlComponent.yaml#/components/schemas/shutterAngle'
+      $ref: './Camera/Components/VideoControlComponent.yaml#/components/pathitems/shutterAngle'
     autoExposureMode:
-      $ref: './Camera/Components/VideoControlComponent.yaml#/components/schemas/autoExposureMode'
+      $ref: './Camera/Components/VideoControlComponent.yaml#/components/pathitems/autoExposureMode'
     ndFilterDisplayMode:
-      $ref: './Camera/Components/VideoControlComponent.yaml#/components/schemas/ndFilterDisplayMode'
+      $ref: './Camera/Components/VideoControlComponent.yaml#/components/pathitems/ndFilterDisplayMode'
