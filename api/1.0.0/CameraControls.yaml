@@ -325,11 +325,19 @@ paths:
   #######
   # Video
   #######
-    shutterSpeed:
-      $ref: './Camera/Components/VideoControlComponent.yaml#/components/pathitems/shutterSpeed'
-    shutterAngle:
-      $ref: './Camera/Components/VideoControlComponent.yaml#/components/pathitems/shutterAngle'
-    autoExposureMode:
-      $ref: './Camera/Components/VideoControlComponent.yaml#/components/pathitems/autoExposureMode'
-    ndFilterDisplayMode:
-      $ref: './Camera/Components/VideoControlComponent.yaml#/components/pathitems/ndFilterDisplayMode'
+  /video/iso:
+    $ref: './Camera/Components/VideoControlComponent.yaml#/components/pathitems/video.iso'
+  /video/gain:
+    $ref: './Camera/Components/VideoControlComponent.yaml#/components/pathitems/video.gain'
+  /video/whiteBalance:
+    $ref: './Camera/Components/VideoControlComponent.yaml#/components/pathitems/video.whiteBalance'
+  /video/whiteBalance/doAuto:
+    $ref: './Camera/Components/VideoControlComponent.yaml#/components/pathitems/video.whiteBalance.doAuto'
+  /video/ndFilter:
+    $ref: './Camera/Components/VideoControlComponent.yaml#/components/pathitems/video.ndFilter'
+  /video/ndFilter/displayMode:
+    $ref: './Camera/Components/VideoControlComponent.yaml#/components/pathitems/video.ndFilter.displayMode'
+  /video/shutter:
+    $ref: './Camera/Components/VideoControlComponent.yaml#/components/pathitems/video.shutter'
+  /video/autoExposure:
+    $ref: './Camera/Components/VideoControlComponent.yaml#/components/pathitems/video.autoExposure'
