@@ -13,7 +13,7 @@ info:
 # Servers index  0 is the default one
 #####################################
 servers:
-  - description: Subpath declaring the interfave version
+  - description: Subpath declaring the interface version
     url: /control/api/v1
   
   - description: Local Mocking
