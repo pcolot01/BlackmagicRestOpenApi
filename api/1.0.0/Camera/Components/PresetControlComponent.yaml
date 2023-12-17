@@ -61,6 +61,7 @@ components:
   pathitems:
     presets:
       get:
+        operationId: getPresets
         summary: Get the list of the presets on the camera
         responses:
           200:
@@ -70,6 +71,7 @@ components:
                 schema:
                   $ref: '#/components/schemas/presetList'
       post:
+        operationId: postPresets
         summary: Send a preset file to the camera
         requestBody:
           content:
@@ -86,6 +88,7 @@ components:
                   $ref: '#/components/schemas/postPresetResponse'
     presets.active:
       get:
+        operationId: getPresetsActive
         summary: Get the list of the presets on the camera
         responses:
           200:
@@ -95,6 +98,7 @@ components:
                 schema:
                   $ref: '#/components/schemas/activePreset'
       put:
+        operationId: putPresetsActive
         summary: Set the active preset on the camera
         requestBody:
           content:
@@ -110,6 +114,7 @@ components:
                   type: string
     presets.{presetName}:
       get:
+        operationId: getPresetsPresetName
         summary: Download the preset file
         parameters:
           - in: path
@@ -127,6 +132,7 @@ components:
                   type: string
                   format: binary
       put:
+        operationId: putPresetsPresetName
         summary: Update a preset on the camera if it exists, if not create a preset and save current state with the presetName
         parameters:
           - in: path
@@ -143,6 +149,7 @@ components:
                 schema:
                   type: string
       delete:
+        operationId: deletePresetsPresetName
         summary: Delete a preset from a camera if exists
         parameters:
           - in: path

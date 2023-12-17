@@ -64,6 +64,7 @@ components:
   pathitems:
     video.iso:
       get:
+        operationId: getVideoIso
         summary: Get current ISO
         responses:
           200:
@@ -79,6 +80,7 @@ components:
                       maximum: 2147483647
                       minimum: 0
       put:
+        operationId: putVideoIso
         summary: Set current ISO
         requestBody:
           content:
@@ -96,6 +98,7 @@ components:
             description: OK
     video.gain:
       get:
+        operationId: getVideoGain
         summary: Get current gain value in decibels
         responses:
           200:
@@ -111,6 +114,7 @@ components:
                       maximum: 128
                       minimum: -128
       put:
+        operationId: putVideoGain
         summary: Set current gain value
         requestBody:
           content:
@@ -128,6 +132,7 @@ components:
             description: OK
     video.whiteBalance:
       get:
+        operationId: getVideoWhiteBalance
         summary: Get current white balance
         responses:
           200:
@@ -143,6 +148,7 @@ components:
                       maximum: 10000
                       minimum: 2500
       put:
+        operationId: putVideoWhiteBalance
         summary: Set current white balance
         requestBody:
           content:
@@ -160,12 +166,14 @@ components:
             description: OK
     video.whiteBalance.doAuto:
       put:
+        operationId: putVideoWhiteBalanceDoAuto
         summary: Set current white balance automatically
         responses:
           200:
             description: OK
     video.whiteBalanceTint:
       get:
+        operationId: getVideoWhiteBalanceTint
         summary: Get white balance tint
         responses:
           200:
@@ -181,6 +189,7 @@ components:
                       maximum: 50
                       minimum: -50
       put:
+        operationId: putVideoWhiteBalanceTint
         summary: Set white balance tint
         requestBody:
           content:
@@ -198,6 +207,7 @@ components:
             description: OK
     video.ndFilter:
       get:
+        operationId: getVideoNdFilter
         summary: Get ND filter stop
         responses:
           200:
@@ -213,6 +223,7 @@ components:
                       maximum: 15.0
                       minimum: 0.0
       put:
+        operationId: putVideoNdFilter
         summary: Set ND filter stop
         requestBody:
           content:
@@ -230,6 +241,7 @@ components:
             description: OK
     video.ndFilter.displayMode:
       get:
+        operationId: getVideoNdFilterDisplayMode
         summary: Get ND filter display mode on the camera
         responses:
           200:
@@ -242,6 +254,7 @@ components:
                     displayMode:
                       $ref: '#/components/schemas/ndFilterDisplayMode'
       put:
+        operationId: putVideoNdFilterDisplayMode
         summary: Set ND filter display mode on the camera
         requestBody:
           content:
@@ -256,6 +269,7 @@ components:
             description: OK
     video.shutter:
       get:
+        operationId: getVideoShutter
         summary: Get current shutter. Will return either shutter speed or shutter angle depending on shutter measurement in device settings
         responses:
           200:
@@ -273,6 +287,7 @@ components:
                     shutterAngle:
                       $ref: '#/components/schemas/shutterAngle'
       put:
+        operationId: putVideoShutter
         summary: Set current shutter
         requestBody:
           description: Only a single property needs to be selected. If more than one is provided, the order of priority is (shutterSpeed > shutterAngle)
@@ -290,6 +305,7 @@ components:
             description: OK
     video.autoExposure:
       get:
+        operationId: getVideoAutoExposure
         summary: Get current auto exposure mode
         responses:
           200:
@@ -302,6 +318,7 @@ components:
                     mode:
                       $ref: '#/components/schemas/autoExposureMode'
       put:
+        operationId: putVideoAutoExposure
         summary: Set auto exposure
         requestBody:
           description: Auto exposure mode to set

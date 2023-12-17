@@ -50,6 +50,7 @@ components:
   pathitems:
     event.list:
       get:
+        operationId: getEventList
         summary: Get the list of events that can be subscribed to using the websocket API.
         responses:
           200:

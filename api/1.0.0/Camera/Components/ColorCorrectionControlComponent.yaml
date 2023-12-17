@@ -168,6 +168,7 @@ components:
   pathitems:
     colorCorrection.lift:
       get:
+        operationId: getColorCorrectionLift
         summary: Get color correction lift
         responses:
           200:
@@ -177,6 +178,7 @@ components:
                 schema:
                   $ref: '#/components/schemas/Lift'
       put:
+        operationId: putColorCorrectionLift
         summary: Set color correction lift
         requestBody:
           content:
@@ -188,6 +190,7 @@ components:
             description: OK
     colorCorrection.gamma:
       get:
+        operationId: getColorCorrectionGamma
         summary: Get color correction gamma
         responses:
           200:
@@ -197,6 +200,7 @@ components:
                 schema:
                   $ref: '#/components/schemas/Gamma'
       put:
+        operationId: putColorCorrectionGamma
         summary: Set color correction gamma
         requestBody:
           content:
@@ -208,6 +212,7 @@ components:
             description: OK
     colorCorrection.gain:
       get:
+        operationId: getColorCorrectionGain
         summary: Get color correction gain
         responses:
           200:
@@ -217,6 +222,7 @@ components:
                 schema:
                   $ref: '#/components/schemas/Gain'
       put:
+        operationId: putColorCorrectionGain
         summary: Set color correction gain
         requestBody:
           content:
@@ -228,6 +234,7 @@ components:
             description: OK
     colorCorrection.offset:
       get:
+        operationId: getColorCorrectionOffset
         summary: Get color correction offset
         responses:
           200:
@@ -237,6 +244,7 @@ components:
                 schema:
                   $ref: '#/components/schemas/Offset'
       put:
+        operationId: putColorCorrectionOffset
         summary: Set color correction offset
         requestBody:
           content:
@@ -248,6 +256,7 @@ components:
             description: OK
     colorCorrection.contrast:
       get:
+        operationId: getColorCorrectionContrast
         summary: Get color correction contrast
         responses:
           200:
@@ -257,6 +266,7 @@ components:
                 schema:
                   $ref: '#/components/schemas/Contrast'
       put:
+        operationId: putColorCorrectionContrast
         summary: Set color correction contrast
         requestBody:
           content:
@@ -268,6 +278,7 @@ components:
             description: OK
     colorCorrection.color:
       get:
+        operationId: getColorCorrectionColor
         summary: Get color correction color properties
         responses:
           200:
@@ -277,6 +288,7 @@ components:
                 schema:
                   $ref: '#/components/schemas/Color'
       put:
+        operationId: putColorCorrectionColor
         summary: Set color correction color properties
         requestBody:
           content:
@@ -288,6 +300,7 @@ components:
             description: OK
     colorCorrection.lumaContribution:
       get:
+        operationId: getColorCorrectionLumaContribution
         summary: Get color correction luma contribution
         responses:
           200:
@@ -297,6 +310,7 @@ components:
                 schema:
                   $ref: '#/components/schemas/LumaContribution'
       put:
+        operationId: putColorCorrectionLumaContribution
         summary: Set color correction luma contribution
         requestBody:
           content:

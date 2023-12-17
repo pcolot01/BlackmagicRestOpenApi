@@ -56,6 +56,7 @@ components:
   pathitems:
     lens.iris:
       get:
+        operationId: getLensIris
         summary: Get lens' aperture
         responses:
           200:
@@ -75,6 +76,7 @@ components:
                     apertureNumber:
                       $ref: '#/components/schemas/apertureNumber'
       put:
+        operationId: putLensIris
         summary: Set lens' aperture
         requestBody:
           description: Only a single property need to be selected. If multiple provided, the order of priority is (apertureStop > normalised > apertureNumber)
@@ -94,6 +96,7 @@ components:
             description: OK
     lens.zoom:
       get:
+        operationId: getLensZoom
         summary: Get lens' zoom
         responses:
           200:
@@ -108,6 +111,7 @@ components:
                     normalised:
                       $ref: '#/components/schemas/normalised'
       put:
+        operationId: putLensZoom
         summary: Set lens' zoom
         requestBody:
           description: Only a single property need to be selected. If multiple provided, the order of priority is (focalLength > normalised)
@@ -125,6 +129,7 @@ components:
             description: OK
     lens.focus:
       get:
+        operationId: getLensFocus
         summary: Get lens' focus
         responses:
           200:
@@ -137,6 +142,7 @@ components:
                     focus:
                       $ref: '#/components/schemas/normalised'
       put:
+        operationId: putLensFocus
         summary: Set lens' focus
         requestBody:
           content:
@@ -151,6 +157,7 @@ components:
             description: OK
     lens.focus.doAutoFocus:
       put:
+        operationId: putLensFocusDoAutoFocus
         summary: Perform auto focus
         responses:
           200:

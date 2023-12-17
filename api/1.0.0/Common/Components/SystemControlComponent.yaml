@@ -207,6 +207,7 @@ components:
   pathitems:
     system:
       get:
+        operationId: getSystem
         summary: Get device system information.
         responses:
           200:
@@ -219,6 +220,7 @@ components:
             description: This functionality is not implemented for the device in use.
     system.supportedCodecFormats:
       get:
+        operationId: getSystemSupportedCodecFormats
         summary: Get the list of supported codecs.
         responses:
           200:
@@ -231,6 +233,7 @@ components:
             description: This functionality is not implemented for the device in use.
     system.codecFormat:
       get:
+        operationId: getSystemCodecFormat
         summary: Get the currently selected codec.
         responses:
           200:
@@ -242,6 +245,7 @@ components:
           501:
             description: This functionality is not implemented for the device in use.
       put:
+        operationId: putSystemCodecFormat
         summary: Set the codec.
         requestBody:
           description: Update the system codec
@@ -256,6 +260,7 @@ components:
             description: This functionality is not implemented for the device in use.
     system.videoFormat:
       get:
+        operationId: getSystemVideoFormat
         summary: Get the currently selected video format.
         responses:
           200:
@@ -267,6 +272,7 @@ components:
           501:
             description: This functionality is not implemented for the device in use.
       put:
+        operationId: putSystemVideoFormat
         summary: Set the video format.
         requestBody:
           description: Update the system video format
@@ -281,6 +287,7 @@ components:
             description: This functionality is not implemented for the device in use.
     system.supportedVideoFormats:
       get:
+        operationId: getSystemSupportedVideoFormats
         summary: Get the list of supported video formats for the current system state.
         responses:
           200:
@@ -293,6 +300,7 @@ components:
             description: This functionality is not implemented for the device in use.
     system.supportedFormats:
       get:
+        operationId: getSystemSupportedFormats
         summary: Get supported formats.
         responses:
           200:
@@ -305,6 +313,7 @@ components:
             description: This functionality is not implemented for the device in use.
     system.format:
       get:
+        operationId: getSystemFormat
         summary: Get current format.
         responses:
           200:
@@ -316,6 +325,7 @@ components:
           501:
             description: This functionality is not implemented for the device in use.
       put:
+        operationId: putSystemFormat
         summary: Set the format.
         requestBody:
           description: Update the system format

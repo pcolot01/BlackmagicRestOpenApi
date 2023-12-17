@@ -110,6 +110,7 @@ components:
   pathitems:
     transports.0:
         get:
+          operationId: getTransports0
           summary: Get device's basic transport status.
           responses:
             200:
@@ -119,6 +120,7 @@ components:
                   schema:
                     $ref: '#/components/schemas/TransportResponse'
         put:
+          operationId: putTransports0
           summary: Set device's basic transport status.
           requestBody:
               description: Set the transport mode
@@ -138,6 +140,7 @@ components:
               description: No Content
     transports.0.stop:
         get:
+          operationId: getTransports0Stop
           summary: Determine if transport is stopped.
           responses:
             200:
@@ -148,12 +151,14 @@ components:
                     description: True when transport mode is InputPreview or when in Output mode and speed is 0
                     type: boolean
         put:
+          operationId: putTransports0Stop
           summary: Stop transport.
           responses:
             204:
               description: No Content
     transports.0.play:
         get:
+          operationId: getTransports0Play
           summary: Determine if transport is playing.
           responses:
             200:
@@ -164,12 +169,14 @@ components:
                     description: True when transport is in Output mode and speed is non-zero
                     type: boolean
         put:
+          operationId: putTransports0Play
           summary: Start playing on transport.
           responses:
             204:
               description: No Content
     transports.0.playback:
         get:
+          operationId: getTransports0Playback
           summary: Get playback state.
           responses:
             200:
@@ -179,6 +186,7 @@ components:
                     schema:
                       $ref: '#/components/schemas/Playback'
         put:
+          operationId: putTransports0Playback
           summary: Set playback state.
           requestBody:
             description: Update playback state
@@ -191,6 +199,7 @@ components:
               description: No Content
     transports.0.record:
         get:
+          operationId: getTransports0Record
           summary: Get record state.
           responses:
             200:
@@ -200,6 +209,7 @@ components:
                   schema:
                     $ref: '#/components/schemas/GetRecord'
         put:
+          operationId: putTransports0Record
           summary: Set record state.
           requestBody:
             description: Update record state
@@ -212,6 +222,7 @@ components:
               description: No Content
     transports.0.timecode:
         get:
+          operationId: getTransports0Timecode
           summary: Get device's timecode.
           responses:
             200:
@@ -222,6 +233,7 @@ components:
                     $ref: '#/components/schemas/Timecode'
     transports.0.timecode.source:
         get:
+          operationId: getTransports0TimecodeSource
           summary: Get timecode source selected on device
           responses:
             200:

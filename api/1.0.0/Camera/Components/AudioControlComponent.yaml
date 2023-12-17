@@ -137,6 +137,7 @@ components:
   pathitems:
     audio.channel.{channelIndex}.input:
       get:
+        operationId: getAudioChannelChannelIndexInput
         summary: Get the audio input (source and type) for the selected channel
         parameters:
           - name: channelIndex
@@ -155,6 +156,7 @@ components:
           '404':
             description: Channel does not exist
       put:
+        operationId: putAudioChannelChannelIndexInput
         summary: Set the audio input for the selected channel
         parameters:
           - name: channelIndex
@@ -177,6 +179,7 @@ components:
             description: Channel does not exist
     audio.channel.{channelIndex}.input.description:
       get:
+        operationId: getAudioChannelChannelIndexInputDescription
         summary: Get the description of the current input of the selected channel
         parameters:
           - name: channelIndex
@@ -196,6 +199,7 @@ components:
             description: Channel does not exist
     audio.channel.{channelIndex}.supportedInputs:
       get:
+        operationId: getAudioChannelChannelIndexSupportedInputs
         summary: Get the list of supported inputs and their availability to switch to for the selected channel
         parameters:
           - name: channelIndex
@@ -215,6 +219,7 @@ components:
             description: Channel does not exist
     audio.channel.{channelIndex}.level:
       get:
+        operationId: getAudioChannelChannelIndexLevel
         summary: Get the audio input level for the selected channel
         parameters:
           - name: channelIndex
@@ -233,6 +238,7 @@ components:
           '404':
             description: Channel does not exist
       put:
+        operationId: putAudioChannelChannelIndexLevel
         summary: Set the audio input level for the selected channel
         parameters:
           - name: channelIndex
@@ -255,6 +261,7 @@ components:
             description: Channel does not exist
     audio.channel.{channelIndex}.phantomPower:
       get:
+        operationId: getAudioChannelChannelIndexPhantomPower
         summary: Get the audio input phantom power for the selected channel if possible
         parameters:
           - name: channelIndex
@@ -274,6 +281,7 @@ components:
           '404':
             description: Channel does not exist
       put:
+        operationId: putAudioChannelChannelIndexPhantomPower
         summary: Set the audio phantom power for the selected channel
         parameters:
           - name: channelIndex
@@ -296,6 +304,7 @@ components:
             description: Channel does not exist
     audio.channel.{channelIndex}.padding:
       get:
+        operationId: getAudioChannelChannelIndexPadding
         summary: Get the audio input padding for the selected channel
         parameters:
           - name: channelIndex
@@ -315,6 +324,7 @@ components:
           '404':
             description: Channel does not exist
       put:
+        operationId: putAudioChannelChannelIndexPadding
         summary: Set the audio input padding for the selected channel
         parameters:
           - name: channelIndex
@@ -337,6 +347,7 @@ components:
             description: Channel does not exist
     audio.channel.{channelIndex}.lowCutFilter:
       get:
+        operationId: getAudioChannelChannelIndexLowCutFilter
         summary: Get the audio input low cut filter for the selected channel
         parameters:
           - name: channelIndex
@@ -356,6 +367,7 @@ components:
           '404':
             description: Channel does not exist
       put:
+        operationId: putAudioChannelChannelIndexLowCutFilter
         summary: Set the audio input low cut filter for the selected channel
         parameters:
           - name: channelIndex
@@ -378,6 +390,7 @@ components:
             description: Channel does not exist
     audio.channel.{channelIndex}.available:
       get:
+        operationId: getAudioChannelChannelIndexAvailable
         summary: Get the audio input's current availability for the selected channel. If unavailable, the source will be muted
         parameters:
           - name: channelIndex

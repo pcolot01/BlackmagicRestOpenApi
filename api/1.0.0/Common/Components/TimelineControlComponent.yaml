@@ -74,6 +74,7 @@ components:
   pathitems:
     timelines.0:
       get:
+        operationId: getTimelines0
         summary: Get the current playback timeline.
         responses:
           200:
@@ -83,12 +84,14 @@ components:
                 schema:
                   $ref: '#/components/schemas/Timeline'
       delete:
+        operationId: deleteTimelines0
         summary: Clear the current playback timeline.
         responses:
           204:
             description: No Content
     timelines.0.add:
       post:
+        operationId: postTimelines0Add
         summary: Add a clip to the end of the timeline.
         requestBody:
           description: Clip information to add

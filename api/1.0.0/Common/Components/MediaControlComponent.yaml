@@ -113,6 +113,7 @@ components:
   pathitems:
     media.workingset:
       get:
+        operationId: getMediaWorkingset
         summary: Get the list of media devices currently in the working set.
         responses:
           200:
@@ -123,6 +124,7 @@ components:
                   $ref: '#/components/schemas/Workingset'
     media.active:
       get:
+        operationId: getMediaActive
         summary: Get the currently active media device.
         responses:
           200:
@@ -132,6 +134,7 @@ components:
                 schema:
                   $ref: '#/components/schemas/ActiveMedia'
       put:
+        operationId: putMediaActive
         summary: Set the currently active media device.
         requestBody:
           description: Set the specified index to be active
@@ -148,6 +151,7 @@ components:
             description: No Content
     media.devices.doformatSupportedFilesystems:
       get:
+        operationId: getMediaDevicesDoformatSupportedFilesystems
         summary: Get the list of filesystems available to format the device.
         responses:
           200:
@@ -158,6 +162,7 @@ components:
                   $ref: '#/components/schemas/DoFormatSupportedFilesystems'
     media.devices.{deviceName}:
       get:
+        operationId: getMediaDevicesDeviceName
         summary: Get information about the selected device.
         parameters:
           - in: path
@@ -175,6 +180,7 @@ components:
                   $ref: '#/components/schemas/MediaDeviceInformation'
     media.devices.{deviceName}.doformat:
       get:
+        operationId: getMediaDevicesDeviceNameDoformat
         summary: Get a format key, used to format the device with a put request.
         parameters:
           - in: path
@@ -196,6 +202,7 @@ components:
                     key:
                       $ref: '#/components/schemas/FormatKey'
       put:
+        operationId: putMediaDevicesDeviceNameDoformat
         summary: Perform a format of the media device.
         parameters:
           - in: path
